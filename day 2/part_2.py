@@ -1,6 +1,5 @@
 valid_policies = []
 with open("input.txt", "r") as f:
-    
     for i in f:
         policy_string = i.strip().split(" ")
         
