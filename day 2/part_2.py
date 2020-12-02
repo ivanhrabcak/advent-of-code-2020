@@ -8,13 +8,10 @@ with open("input.txt", "r") as f:
         letter = policy_string[1].replace(":", "")
         password = policy_string[2]
 
-        characters = {}
-        for l in password:
-            if characters.get(l) == None:
-                characters[l] = 1
-            else:
-                characters[l] += 1
-        if characters.get(letter) != None and characters.get(letter) <= letter_range[1] and characters.get(letter) >= letter_range[0]:
+        is_letter_1_valid = password[letter_range[0] - 1] == letter
+        is_letter_2_valid = password[letter_range[1] - 1] == letter
+        
+        if is_letter_1_valid != is_letter_2_valid:
             valid_policies.append(i)
 
 print(len(valid_policies))
