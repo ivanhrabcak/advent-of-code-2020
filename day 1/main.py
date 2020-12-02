@@ -3,5 +3,5 @@ with open("input.txt", "r") as f:
 
 for n in numbers:
     if 2020 - n in numbers:
-        print(n, numbers[numbers.index(2020 - n)])
+        print(n * numbers[numbers.index(2020 - n)])
         break
