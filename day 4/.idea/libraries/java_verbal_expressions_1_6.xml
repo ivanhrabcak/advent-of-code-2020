@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="java-verbal-expressions-1.6">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dependencies/java-verbal-expressions-1.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
