@@ -35,7 +35,5 @@ public class DayFourPartOne {
         });
 
         System.out.println(validPassports[0]);
-
-
     }
 }
