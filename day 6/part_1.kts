@@ -2,10 +2,9 @@ import java.io.File
 import java.util.*
 import java.util.function.Consumer
 
-var unparsedData: List<String> = File("input.txt").readText()
+var data: List<String> = File("input.txt").readText()
         .split("\n\n")
 
-var data: Array<String> = Array(unparsedData.size) { i -> unparsedData[i] };
 
 fun getAllYesQuestions(answers: String): MutableList<Char> {
     val out: MutableList<Char> = mutableListOf()
