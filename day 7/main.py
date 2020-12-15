@@ -22,16 +22,17 @@ def get_color(rule):
 def get_containing_bags(rule):
     return rule.split(" contain ")[1].split(", ")
 
-def solve(bag, counter, rules, bags_scanned):
+def solve(bag, counter, rules, answers):
     if len(find_applying_rules(bag, rules)) == 0:
-        return counter
+        answers.append(counter)
+        return
 
     for rule in find_applying_rules(bag, rules):
         print(get_color(rule))
-        if get_color(rule) not in bags_scanned:
-            bags_scanned.append(get_color(rule))
-            return solve(get_color(rule), counter + 1, rules, bags_scanned)
-            
+        # if get_color(rule) not in bags_scanned:
+        # bags_scanned.append(get_color(rule))
+        solve(get_color(rule), counter + 1, rules, answers)
+    return answers
 
 rules = ""
 with open("input.txt") as f:
@@ -42,7 +43,7 @@ rules.pop()
 
 target_color = "shiny gold"
 
-print(solve(target_color, 0, rules, []))
+print(sorted(solve(target_color, 0, rules, [])))
 
 # target_color_rules = find_applying_rules(target_color, rules)
 # for rule in target_color_rules:
